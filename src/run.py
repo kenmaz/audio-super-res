@@ -60,9 +60,15 @@ def make_parser():
 # ----------------------------------------------------------------------------
 
 def train(args):
+  print(args.train)
+  print(args.val)
+
   # get data
   X_train, Y_train = load_h5(args.train)
   X_val, Y_val = load_h5(args.val)
+
+  print(X_train.shape, Y_train.shape)
+  print(X_val.shape, Y_val.shape)
 
   # determine super-resolution level
   n_dim, n_chan = Y_train[0].shape

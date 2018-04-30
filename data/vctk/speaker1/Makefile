@@ -24,7 +24,8 @@ vctk-speaker1-train.%.$(SR).$(DIM).$(STR).h5: speaker1-train-files.txt
 		--dimension $(DIM) \
 		--stride $(STR) \
 		--interpolate \
-		--low-pass
+		--low-pass \
+		--batch-size 1
 	mv $@.tmp $@
 
 vctk-speaker1-val.%.$(SR).$(DIM).$(STR).h5: speaker1-val-files.txt
@@ -37,5 +38,6 @@ vctk-speaker1-val.%.$(SR).$(DIM).$(STR).h5: speaker1-val-files.txt
 		--dimension $(DIM) \
 		--stride $(STR) \
 		--interpolate \
-		--low-pass
+		--low-pass \
+		--batch-size 1
 	mv $@.tmp $@
